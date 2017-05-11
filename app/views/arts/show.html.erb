@@ -6,9 +6,10 @@
 
 <label>Description</label>
 <p><%= @art.description %></p>
+<%= image_tag @art.image_url, width: 250 if @art.image.present? %><br><br>
 <% if @art.user_id == session[:user_id] %>
   <%= link_to 'Edit', edit_art_path(@art) %>
-<% end %>
+<% end %><br>
 
 <label>New Comment</label>
 <%= form_for Comment.new do |f| %>

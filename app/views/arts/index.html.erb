@@ -29,7 +29,7 @@
 
 <ul>
   <% @arts.each do |art| %>
-    <li><%= link_to art.title, art_path(art) %> - <%= link_to art.user.username, user_path(art.user) %></li>
+    <li><%= link_to art.title, art_path(art) %> - <%= link_to art.user.username, user_path(art.user) %><%= image_tag art.image_url, width: 50 if art.image.present? %> </li>
   <% end %>
 </ul>
 <br>

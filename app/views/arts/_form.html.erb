@@ -5,6 +5,8 @@
   <%= f.text_field :price %><br>
   <%= f.label "Description" %>
   <%= f.text_field :description %><br>
+  <%= f.label "Image" %>
+  <%= f.file_field :image %>
   <%= f.hidden_field :user_id, value: session[:user_id] %>
   <%= f.collection_radio_buttons :category_id, Category.all, :id, :name %>
 <%= f.submit %>

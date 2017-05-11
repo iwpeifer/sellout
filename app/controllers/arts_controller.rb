@@ -16,6 +16,7 @@ class ArtsController < ApplicationController
   def create
     @art = Art.create(art_params)
     redirect_to arts_path
+    byebug
   end
 
   def edit
@@ -31,6 +32,6 @@ class ArtsController < ApplicationController
   private
 
   def art_params
-    params.require(:art).permit(:title, :price, :description, :user_id, :category_id)
+    params.require(:art).permit(:title, :price, :description, :user_id, :category_id, :image)
   end
 end

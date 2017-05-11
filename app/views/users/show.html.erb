@@ -1,9 +1,10 @@
 <h1><%= @user.username %></h1>
 <p><%= @user.bio %></p>
+<p><%= image_tag @user.avatar_url, width: 200 if @user.avatar.present? %>
 
 <h2>Arts</h2>
 <% @user.arts.each do |art| %>
-<p> <%= link_to art.title, art_path(art) %>
+<p> <%= link_to art.title, art_path(art) %> - <%= image_tag art.image_url, width: 50 if art.image.present? %>
 </p>
 <% end %>
 
